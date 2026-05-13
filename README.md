@@ -1,98 +1,112 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/NextJS-Dark.svg" width="40" alt="Next.js" />
-  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/FastAPI.svg" width="40" alt="FastAPI" />
-  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Python-Dark.svg" width="40" alt="Python" />
-  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/TailwindCSS-Dark.svg" width="40" alt="Tailwind CSS" />
-  
-  <br/><br/>
-  
-  <h1>FinGPT X v2.0</h1>
-  <p><strong>A 100% Local, Zero-Latency AI Financial Research Platform</strong></p>
-  
-  <p>
-    <a href="#features">Features</a> •
-    <a href="#tech-stack">Tech Stack</a> •
-    <a href="#installation">Installation</a> •
-    <a href="#architecture">Architecture</a>
-  </p>
+
+<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/NextJS-Dark.svg" width="50" alt="Next.js" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/FastAPI.svg" width="50" alt="FastAPI" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Python-Dark.svg" width="50" alt="Python" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/TailwindCSS-Dark.svg" width="50" alt="Tailwind" />
+
+<br/><br/>
+
+# 🚀 FinGPT X v2.0
+
+**Institutional-Grade Financial Intelligence. 100% Locally Hosted.**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Next.js 15](https://img.shields.io/badge/Next.js-15-black.svg?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Ollama](https://img.shields.io/badge/Ollama-Offline_Inference-black?logo=ollama)](https://ollama.com/)
+
+<p align="center">
+  <a href="#-philosophy">Philosophy</a> •
+  <a href="#-core-features">Features</a> •
+  <a href="#-architecture--stack">Architecture</a> •
+  <a href="#-getting-started">Getting Started</a> •
+  <a href="#-usage">Usage</a>
+</p>
+
 </div>
-
-<hr />
-
-## ⚡ Overview
-
-**FinGPT X** is an institutional-grade financial intelligence platform designed to run entirely on local silicon. By directly integrating **Ollama** with a highly optimized decoupled microservice architecture, FinGPT X allows users to converse with financial data, generate risk reports, and perform semantic RAG on SEC filings in absolute privacy.
-
-No OpenAI keys. No cloud latency. No data harvesting.
-
-## ✨ Features
-
-- 🕵️ **Absolute Privacy:** 100% offline execution. Your portfolios, trading ideas, and sensitive documents never leave your machine.
-- ⚡ **Zero-Latency Streams:** Bypassed Node.js buffering for direct Server-Sent Events (SSE) from the LLM, achieving a sub-2-second Time-To-First-Token (TTFT).
-- 📊 **AI Portfolio Risk Analyst:** Evaluates sector concentration, correlation overlap, and provides actionable rebalancing suggestions.
-- 📑 **Institutional Report Generator:** Autonomously writes structured Markdown/PDF reports with Executive Summaries, Bear/Bull cases, and Valuation Metrics.
-- 🎙️ **Native Voice Interaction:** Speak directly to your financial data via an integrated, responsive voice assistant.
-- 🧠 **Zero-Wait RAG:** Dynamic ChromaDB embedding engine that intelligently bypasses initialization if no documents are present to prevent dead-load delays.
-
-## 🛠 Tech Stack
-
-### Frontend
-- **Next.js 15 (App Router)** & **React 19**
-- **Tailwind CSS v4** & **Framer Motion** for a sleek, hardware-accelerated "True Black" monochrome aesthetic.
-- **Zustand** & **React Query** for optimistic UI hydration.
-
-### Backend
-- **Python 3.12** & **FastAPI**
-- **Ollama** for localized LLM inference (optimized for `phi3:latest` and `llama3`).
-- **SQLAlchemy** & **SQLite** for relational persistence.
-- **ChromaDB** for semantic dense vector storage.
 
 ---
 
-## 🚀 Installation & Setup
+## ⚡ Philosophy
+
+Most modern AI financial tools are thin wrappers around OpenAI or Anthropic. This exposes user trading strategies, portfolios, and sensitive financial documents to the cloud while suffering from unpredictable API latency.
+
+**FinGPT X flips the paradigm.** It proves that with aggressive architectural optimization, intelligent context window management, and modern edge-models (like `phi3`), it is possible to achieve instantaneous, world-class financial intelligence running entirely on consumer-grade local silicon.
+
+No API keys. No data harvesting. Absolute privacy.
+
+---
+
+## ✨ Core Features
+
+| Feature | Description |
+| :--- | :--- |
+| **🛡️ 100% Offline Privacy** | Your portfolios and sensitive documents never leave your machine. Runs securely on localhost. |
+| **⚡ Zero-Latency Streaming** | Direct Server-Sent Events (SSE) bypass Node.js buffering, achieving an incredible **~1.8s Time-To-First-Token (TTFT)**. |
+| **📑 Institutional Reports** | AI autonomously acts as a Senior Equity Analyst, generating strictly formatted Markdown/PDF deep-dives complete with risk matrices. |
+| **📊 AI Portfolio Analyst** | Evaluates your mock/real holdings for sector concentration, correlation overlap, and suggests actionable rebalancing strategies. |
+| **🧠 Zero-Wait RAG** | Dynamic `ChromaDB` embedding engine that instantly bypasses initialization if no documents are uploaded, saving dead-load delays. |
+| **🎙️ Voice Assistant** | Speak directly to your financial data via an integrated voice-interaction engine. |
+
+---
+
+## 🏗 Architecture & Stack
+
+FinGPT X runs on a highly decoupled microservice architecture:
+
+- **Frontend (Presentation):** [Next.js 15](https://nextjs.org/) (React 19), [Tailwind CSS v4](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/) for hardware-accelerated animations, and Zustand/React Query for optimistic UI state hydration.
+- **Backend (Intelligence):** [FastAPI](https://fastapi.tiangolo.com/) (Python 3.12) utilizing async event loops.
+- **Data Persistence:** Local `SQLite` (via SQLAlchemy) for relational storage, and `ChromaDB` for semantic dense vector storage of SEC filings and PDFs.
+- **Inference Engine:** [Ollama](https://ollama.com/) acting as the orchestrator for lightweight, lightning-fast edge models (`phi3:latest`).
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-1. Install [Ollama](https://ollama.com/) and pull the required model:
-   ```bash
-   ollama run phi3
-   ```
-2. Ensure you have **Node.js (v20+)**, **pnpm**, and **Python 3.12+** installed.
+Before starting, ensure you have the following installed:
+1. **Node.js** (v20+) and **pnpm**
+2. **Python** (v3.12+)
+3. **[Ollama](https://ollama.com/)** running locally
 
-### 1. Clone the Repository
+### 1. Model Initialization
+Pull the lightweight `phi3` edge model required for zero-latency execution:
 ```bash
-git clone https://github.com/Eren-Sama/FinGPT-X.git
-cd FinGPT-X
+ollama run phi3
 ```
 
-### 2. Setup the Backend
-Navigate to the API directory and install Python dependencies:
+### 2. Clone & Setup Backend
 ```bash
-cd apps/api
+git clone https://github.com/Eren-Sama/FinGPT-X.git
+cd FinGPT-X/apps/api
+
+# Create and activate virtual environment
 python -m venv .venv
+source .venv/bin/activate  # (On Windows use: .venv\Scripts\activate)
 
-# Windows
-.venv\Scripts\activate
-# Mac/Linux
-source .venv/bin/activate
-
+# Install requirements
 pip install -r requirements.txt
 ```
 
 ### 3. Seed Local Market Data
-Generate realistic, localized mock financial data:
+Generate realistic mock financial data for the platform to analyze:
 ```bash
 python seed_new_assets.py
 python seed_portfolio.py
 ```
 
-### 4. Setup the Frontend
-Open a new terminal, navigate to the web directory, and install Node dependencies:
+### 4. Setup Frontend
+Open a new terminal window:
 ```bash
-cd apps/web
+cd FinGPT-X/apps/web
 pnpm install
 ```
 
-### 5. Run the Platform
+### 5. Launch the Platform
 You can run both servers simultaneously using the provided root start script:
 ```bash
 # Windows
@@ -103,9 +117,20 @@ You can run both servers simultaneously using the provided root start script:
 # Terminal 2 (Frontend): cd apps/web && pnpm dev
 ```
 
-Visit `http://localhost:3000` to access your local Bloomberg Terminal alternative!
+Visit **`http://localhost:3000`** to access your dashboard!
 
 ---
 
-## 🔒 License
-This project is open-source and available under the MIT License.
+## 📖 Usage
+
+- **Dashboard:** View mock market sentiment and trending assets.
+- **Research Desk:** Chat directly with the Phi-3 model about general market mechanics or specific assets. Upload PDFs (like 10-K filings) and the engine will automatically switch to Retrieval-Augmented Generation (RAG).
+- **Reports:** Generate exhaustive Wall Street-style PDFs with structured markdown tables and executive summaries.
+- **Portfolio:** Track holdings and run the Chief Risk Officer AI analysis.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
+*Designed and optimized for localized financial sovereignty.*
